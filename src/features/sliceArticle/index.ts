@@ -15,6 +15,15 @@ export const slice = createSlice({
     ) => {
       state.articles.push(action.payload);
     },
+    deleteNewArticle: (
+      state: IArticlesReducer,
+      action: PayloadAction<number>
+    ) => {
+      state.articles = state.articles.filter(
+        (article) => article.id !== action.payload
+      );
+    },
+
     sliceHandlePin: (
       state: IArticlesReducer,
       action: PayloadAction<number>
@@ -48,7 +57,11 @@ export const slice = createSlice({
   },
 });
 
-export const { addNewArticle, sliceHandlePin, sliceHandleUnPin } =
-  slice.actions;
+export const {
+  addNewArticle,
+  sliceHandlePin,
+  sliceHandleUnPin,
+  deleteNewArticle,
+} = slice.actions;
 
 export default slice.reducer;

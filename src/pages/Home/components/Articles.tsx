@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useAppDispatch } from "../../../app/hooks";
 import {
+  deleteNewArticle,
   sliceHandlePin,
   sliceHandleUnPin,
 } from "../../../features/sliceArticle";
@@ -22,6 +23,9 @@ const Articles: FC<IArticlesProps> = ({ filteredArticles }) => {
   const unHandlePin = (id: number) => {
     dispatch(sliceHandleUnPin(id));
   };
+  const deleteHandler = (id: number) => {
+    dispatch(deleteNewArticle(id));
+  };
 
   return (
     <>
@@ -42,6 +46,9 @@ const Articles: FC<IArticlesProps> = ({ filteredArticles }) => {
                 )}
               </div>
               <p>{item.description}</p>
+              <Button type="button" onClick={() => deleteHandler(item.id)}>
+                Delete
+              </Button>
             </li>
           ))}
         </ul>
