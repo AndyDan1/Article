@@ -1,0 +1,39 @@
+.title {
+  font-size: 5rem;
+}
+.root {
+  margin-top: 1rem;
+
+  ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 0.5rem;
+  }
+  li {
+    width: 32%;
+    border: 1px solid orange;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .img {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @media (min-width: 576px) and (max-width: 991px) {
+    li {
+      width: 50%;
+    }
+  }
+  @media (max-width: 575px) {
+    li {
+      width: 100%;
+    }
+  }
+}
