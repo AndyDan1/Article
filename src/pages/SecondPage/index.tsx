@@ -11,14 +11,10 @@ import styles from "./styles.module.scss";
 interface ISecondPageProps {}
 
 const SecondPage: FC<ISecondPageProps> = ({}) => {
-  const MAX_ARTICLE = 20;
   const [click, setClick] = useState(10);
   const { data = [], isLoading, isError } = useGetCurrentQuery(click);
 
   const addArticle = () => {
-    if (click === MAX_ARTICLE) {
-      return;
-    }
     setClick((prev) => prev + 10);
   };
 
