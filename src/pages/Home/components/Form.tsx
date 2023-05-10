@@ -1,5 +1,6 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useAppDispatch } from "../../../app/hooks";
+// import { addNewArticle } from "../../../features/sliceArticle";
 import { addNewArticle } from "../../../features/sliceArticle";
 
 import Button from "../../../components/ui/Button";
@@ -33,6 +34,7 @@ const Form: FC<IFormProps> = ({}) => {
       });
     }
   };
+
   return (
     <form onSubmit={handleAddArticle}>
       <TextField
@@ -55,3 +57,42 @@ const Form: FC<IFormProps> = ({}) => {
 };
 
 export default Form;
+
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+// export interface Post {
+//   id: number;
+//   name: string;
+// }
+
+// const api = createApi({
+//   baseQuery: fetchBaseQuery({
+//     baseUrl: "/",
+//   }),
+//   tagTypes: ["Post"],
+//   endpoints: (build) => ({
+//     getPost: build.query<Post, number>({
+//       query: (id) => `post/${id}`,
+//       providesTags: ["Post"],
+//     }),
+//     updatePost: build.mutation<void, Pick<Post, "id"> & Partial<Post>>({
+//       query: ({ id, ...patch }) => ({
+//         url: `post/${id}`,
+//         method: "PATCH",
+//         body: patch,
+//       }),
+//       invalidatesTags: ["Post"],
+//       async onQueryStarted({ id, ...patch }, { dispatch, queryFulfilled }) {
+//         const patchResult = dispatch(
+//           api.util.updateQueryData("getPost", id, (draft) => {
+//             Object.assign(draft, patch);
+//           })
+//         );
+//         try {
+//           await queryFulfilled;
+//         } catch {
+//           patchResult.undo();
+//         }
+//       },
+//     }),
+//   }),
+// });

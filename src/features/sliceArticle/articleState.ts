@@ -7,33 +7,31 @@ export type articleItem = {
 
 export interface IArticlesReducer {
   articles: articleItem[];
+  loading?: boolean;
+  error?: string | null;
 }
 
 export const articlesInitialState: IArticlesReducer = {
   articles: [
     {
-      id: Date.now() + 1,
-      title: "Article 1",
-      description: "Description for article 1",
+      id: 1683550035050,
+      title: "Article 2",
+      description: "typicode asdas asd",
+      pinned: false,
+    },
+    {
+      id: 1683550035060,
+      title: "TypeScript1",
+      description: "TypeScript1",
       pinned: true,
     },
     {
-      id: Date.now() + 2,
-      title: "Brticle 2",
-      description: "Description for article 2",
-      pinned: false,
-    },
-    {
-      id: Date.now() + 3,
-      title: "Crticle 3",
-      description: "Description for article 3",
-      pinned: false,
-    },
-    {
-      id: Date.now() + 4,
-      title: "asd 3",
-      description: "asd",
+      id: 1683550035070,
+      title: "TypeScript2",
+      description: "TypeScript2",
       pinned: false,
     },
   ],
+  loading: false,
+  error: null,
 };

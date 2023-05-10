@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
-import { useGetCurrentQuery } from "../../services/apiSliceArticle";
+import { useGetCurrentQuery } from "../../services/apiSliceArticle/apiSliceArticle";
 
 import Container from "../../components/layouts/Container";
 import Button from "../../components/ui/Button";
 import ArticleItem from "./components/ArticleItem";
 
-import { IArticle } from "../../services/interfacesForArticle";
+import { IArticle } from "../../services/apiSliceArticle/interfacesForArticle";
 import styles from "./styles.module.scss";
 
 interface ISecondPageProps {}

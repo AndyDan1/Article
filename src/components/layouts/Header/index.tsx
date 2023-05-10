@@ -14,6 +14,7 @@ const Header: FC<IHeaderProps> = ({}) => {
       <Container className={styles.container}>
         <nav>
           <NavLink to={books.home}>home</NavLink>
+          <NavLink to={books.homeServ}>homeServ</NavLink>
           <NavLink to={books.secondPage}>secondPage</NavLink>
         </nav>
       </Container>

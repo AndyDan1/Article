@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   articleItem,
   IArticlesReducer,
@@ -36,8 +36,9 @@ export const slice = createSlice({
         return article;
       });
       const pinned = state.articles.filter((article) => article.pinned);
-      const notPinned = state.articles.filter((article) => !article.pinned);
-      notPinned.sort((a, b) => a.id - b.id);
+      const notPinned = state.articles
+        .filter((article) => !article.pinned)
+        .sort((a, b) => a.id - b.id);
       notPinned.unshift(...pinned);
       state.articles = notPinned;
     },

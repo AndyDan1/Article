@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IArticle } from "./interfacesForArticle";
-import { ServerResponse } from "../models/models";
-import { apiKey, link } from "../assets/constants/link";
+import { ServerResponse } from "../../models/models";
+import { apiKey, link } from "../../assets/constants/link";
 
 export const apiSliceCurrent = createApi({
   reducerPath: "newsapi",
